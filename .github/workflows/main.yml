@@ -15,6 +15,6 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd /home/hibiki/git/VCWatcher-DiscordBot/
+            cd /home/hibiki/git/BiblioBot/
             git pull
-            cp -r /home/hibiki/git/VCWatcher-DiscordBot/* /home/hibiki/projects/VCWatcher/
+            cp -r /home/hibiki/git/BiblioBot/* /home/hibiki/projects/BiblioBot/
