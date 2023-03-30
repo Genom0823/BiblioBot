@@ -12,6 +12,7 @@ text = cogs.url.get_elements_by_class(url, 'detail__ttl').get_text()
 
 print(text)
 
+#
 '''
 intents = discord.Intents.all()
 intents.message_content = True
