@@ -8,7 +8,9 @@ import cogs
 
 url = 'https://hon-hikidashi.jp/tag/line-up/'
 
-print(cogs.url.get_elements_by_class(url, 'detail__item'))
+text = cogs.url.get_elements_by_class(url, 'detail__ttl').get_text()
+
+print(text)
 
 '''
 intents = discord.Intents.all()
