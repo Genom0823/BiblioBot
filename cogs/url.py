@@ -17,7 +17,8 @@ def print_res(url):
 def get_elements_by_class(url, cl):
     res = requests.get(url)
     soup = BeautifulSoup(res.text, "html.parser")
-    elements = soup.find_all(class_ = cl)
+    #elements = soup.find_all(class_ = cl)
+    elements = soup.find(class_ = cl)
     return elements
 
 
