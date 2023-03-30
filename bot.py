@@ -3,8 +3,14 @@
 import discord
 from datetime import datetime
 
-#import cogs.channel as ch
+import cogs
 
+
+url = 'https://hon-hikidashi.jp/tag/line-up/'
+
+print(cogs.url.get_elements_by_class(url, 'detail__item'))
+
+'''
 intents = discord.Intents.all()
 intents.message_content = True
 client = discord.Client(intents = intents)
@@ -85,3 +91,4 @@ async def on_presence_update(before, after):
 
 
 client.run(TOKEN)
+'''
