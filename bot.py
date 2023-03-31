@@ -8,9 +8,9 @@ import cogs
 
 url = 'https://hon-hikidashi.jp/tag/line-up/'
 
-text = cogs.url.get_elements_by_class(url, 'detail__ttl')
+top_article = cogs.url.get_elements_by_class(url, 'detail__ttl')[0].get_text()
 
-print(text[0].get_text())
+print(top_article)
 
 #
 '''
