@@ -9,9 +9,8 @@ def get_html(url):
     return res
 
 
-def check_updates(url):
-    res = requests.get(url)
-    soup = BeautifulSoup(res.text, "html.parser")
+def check_updates(befor, after):
+    
 
 
 def print_res(url):
