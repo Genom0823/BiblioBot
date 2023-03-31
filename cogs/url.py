@@ -33,7 +33,7 @@ def get_element_by_class(url, cl):
 def get_elements_by_class(url, cl):
     res = requests.get(url)
     soup = BeautifulSoup(res.text, parser)
-    elements = soup.find_all(class_ = cl)
+    elements = soup.find_all("a", class_ = cl)
     return elements
 
 
