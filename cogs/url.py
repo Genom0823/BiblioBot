@@ -4,6 +4,11 @@ import requests
 from bs4 import BeautifulSoup
 
 
+def get_html(url):
+    res = requests.get(url)
+    return res
+
+
 def check_updates(url):
     res = requests.get(url)
     soup = BeautifulSoup(res.text, "html.parser")
