@@ -12,7 +12,7 @@ conn = sqlite3.connect(dbname)
 cur = conn.cursor()
 cur.execute('CREATE TABLE persons(id INTEGER PRIMARY KEY AUTOINCREMENT, name STRING)')
 name = "Taro"
-cur.execute(f'INSERT INTO persons(name) values({name})')
+cur.execute(f'INSERT INTO persons(name) values(:name)', {"name": name})
 conn.commit()
 
 conn.close()
