@@ -13,7 +13,10 @@ top_article = articles[0].contents[0].get('href')
 
 res = list(cogs.url.get_elements_by_tag(top_article, 'tr')[10].stripped_strings)
 
-print(res[4])
+for r in res:
+    print(list(r.stripped_strings)[4])
+
+#print(res[4])
 
 #
 '''
