@@ -9,6 +9,12 @@ import cogs
 dbname = 'TEST.db'
 conn = sqlite3.connect(dbname)
 
+cur = conn.cursor()
+cur.execute('CREATE TABLE persons(id INTEGER PRIMARY KEY AUTOINCREMENT, name STRING)')
+name = "Taro"
+cur.execute(f'INSERT INTO persons(name) values({name})')
+conn.commit()
+
 conn.close()
 
 url = 'https://hon-hikidashi.jp/tag/line-up/'
