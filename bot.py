@@ -6,6 +6,10 @@ import sqlite3
 
 import cogs
 
+dbname = 'TEST.db'
+conn = sqlite3.connect(dbname)
+
+conn.close()
 
 url = 'https://hon-hikidashi.jp/tag/line-up/'
 
