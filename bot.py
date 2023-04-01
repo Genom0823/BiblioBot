@@ -17,8 +17,9 @@ import cogs
 
 #conn.close()
 
-print(cogs.bookshelf.get_book_info('9784046821461'))
+print(cogs.url.soup(cogs.bookshelf.get_book_info('9784046821461')))
 
+'''
 url = 'https://hon-hikidashi.jp/tag/line-up/'
 
 articles = cogs.url.get_elements_by_class(url, 'detail__ttl')
@@ -30,7 +31,7 @@ for r in res:
     print(list(r.stripped_strings))
 
 #print(res[4])
-
+'''
 #
 '''
 intents = discord.Intents.all()

@@ -42,3 +42,8 @@ def get_elements_by_tag(url, tag):
     soup = BeautifulSoup(res.text, parser)
     elements = soup.find_all(tag)
     return elements
+
+
+def soup(res):
+    soup = BeautifulSoup(res.text, parser)
+    return soup
