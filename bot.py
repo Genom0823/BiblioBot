@@ -6,16 +6,18 @@ import sqlite3
 
 import cogs
 
-dbname = 'TEST.db'
-conn = sqlite3.connect(dbname)
+#dbname = 'TEST.db'
+#conn = sqlite3.connect(dbname)
 
-cur = conn.cursor()
-cur.execute('CREATE TABLE persons(id INTEGER PRIMARY KEY AUTOINCREMENT, name STRING)')
-name = "Taro"
-cur.execute(f'INSERT INTO persons(name) values(:name)', {"name": name})
-conn.commit()
+#cur = conn.cursor()
+#cur.execute('CREATE TABLE persons(id INTEGER PRIMARY KEY AUTOINCREMENT, name STRING)')
+#name = "Taro"
+#cur.execute(f'INSERT INTO persons(name) values(:name)', {"name": name})
+#conn.commit()
 
-conn.close()
+#conn.close()
+
+print(cogs.bookshelf.get_book_info('9784046821461'))
 
 url = 'https://hon-hikidashi.jp/tag/line-up/'
 
