@@ -2,6 +2,7 @@
 
 import discord
 from datetime import datetime
+import sqlite3
 
 import cogs
 
