@@ -11,10 +11,9 @@ url = 'https://hon-hikidashi.jp/tag/line-up/'
 articles = cogs.url.get_elements_by_class(url, 'detail__ttl')
 top_article = articles[0].contents[0].get('href')
 
-res = cogs.url.get_elements_by_tag(top_article, 'tr')[10].stripped_strings[4]
+res = list(cogs.url.get_elements_by_tag(top_article, 'tr')[10].stripped_strings)
 
-for response in res:
-    print(response)
+print(res)
 
 #
 '''
