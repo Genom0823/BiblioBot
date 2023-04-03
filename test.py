@@ -18,8 +18,8 @@ import cogs
 #conn.close()
 
 # find book info
-book_info = cogs.bookshelf.get_book_info('9784046821461')
-print(book_info["items"][0]["volumeInfo"]["title"])
+book_info = cogs.bookshelf.get_book_info('9784046821461', cogs.bookshelf.BookData.DESCRIPTION)
+print(book_info)
 
 '''
 url = 'https://hon-hikidashi.jp/tag/line-up/'
