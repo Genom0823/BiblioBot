@@ -6,7 +6,7 @@ import sqlite3
 import discord
 from discord import app_commands
 
-import cogs
+from cogs import bookshelf as bookshelf
 
 
 intents = discord.Intents.all()
@@ -34,9 +34,10 @@ async def on_guild_join(guild):
         notify_channel = await guild.create_text_channel("vc-notify", category = notify_category)
 
 
-@tree.command(name="book",description="ISBNコードから書籍情報を検索します")
-async def test_command(interaction: discord.Interaction,text:str):
-    await interaction.response.send_message(text,ephemeral=True)
+@tree.command(name="isbn",description="ISBNコードから書籍情報を検索します")
+async def test_command(interaction: discord.Interaction,isbn:str,data:bookshelf.BookData):
+    info = bookshelf.get_book_info(isbn, data.value)
+    await interaction.response.send_message(info,ephemeral=True)
 
 
 
