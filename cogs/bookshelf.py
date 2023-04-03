@@ -15,8 +15,10 @@ def close_database(conn):
 
 def get_book_info(isbn):
     try:
-        res = requests.get(f'{isbn_url}{isbn}')
+        book = requests.get(f'{isbn_url}{isbn}')
+        res = book.json()
         return res
+    
     except:
         print('Network Error')
         return None
