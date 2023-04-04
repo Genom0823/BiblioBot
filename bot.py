@@ -36,7 +36,12 @@ async def on_guild_join(guild):
 
 @tree.command(name="isbn",description="ISBNコードから書籍情報を検索します")
 async def test_command(interaction: discord.Interaction,isbn:str,data:bookshelf.BookData):
-    info = bookshelf.get_book_info(isbn, data)
+    try:
+        info = bookshelf.get_book_info(isbn, data)
+
+    except:
+        info = '書籍情報が見つかりませんでした'
+
     await interaction.response.send_message(info,ephemeral=True)
 
 
