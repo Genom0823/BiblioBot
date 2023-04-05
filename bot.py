@@ -41,7 +41,7 @@ async def test_command(interaction: discord.Interaction,isbn:str,data:bookshelf.
     if info == None:
         info = '書籍情報が見つかりませんでした'
 
-    await interaction.response.send_message(info,ephemeral=False)
+    await interaction.response.send_message(f'書籍情報が見つかりました \n ISBN:{isbn} \n {info}',ephemeral=False)
 
 
 
