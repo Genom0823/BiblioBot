@@ -6,6 +6,7 @@ import sqlite3
 import discord
 from discord import app_commands
 
+import setup
 from cogs import bookshelf as bookshelf
 
 
@@ -13,6 +14,7 @@ intents = discord.Intents.all()
 intents.message_content = True
 client = discord.Client(intents = intents)
 tree = app_commands.CommandTree(client)
+TOKEN = setup.TOKEN
 
 @client.event
 async def on_ready():
