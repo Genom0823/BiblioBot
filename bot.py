@@ -10,15 +10,19 @@ import setup
 from cogs import bookshelf as bookshelf
 
 
+# Set up discord client
 intents = discord.Intents.all()
 intents.message_content = True
 client = discord.Client(intents = intents)
+
+# Set Command tree
 tree = app_commands.CommandTree(client)
+# Bot Token
 TOKEN = setup.TOKEN
+
 
 @client.event
 async def on_ready():
-
     await client.wait_until_ready()
     await tree.sync()
     print('起動しました')
@@ -26,10 +30,8 @@ async def on_ready():
 
 @client.event
 async def on_guild_join(guild):
-
     notify_channel = discord.utils.get(guild.text_channels, name="vc-notify")
 
-    
     # create notify channel
     if notify_channel == None:
         notify_category = await guild.create_category("Notify")
@@ -37,14 +39,16 @@ async def on_guild_join(guild):
 
 
 @tree.command(name="isbn",description="ISBNコードから書籍情報を検索します")
-async def test_command(interaction: discord.Interaction,isbn:str,data:bookshelf.BookData):
+async def info_from_isbn(
+    interaction: discord.Interaction,
+    isbn:str,
+    data:bookshelf.BookData):
     info = bookshelf.get_book_info(isbn, data)
 
     if info == None:
         info = '書籍情報が見つかりませんでした'
 
     await interaction.response.send_message(f'書籍情報が見つかりました \n ISBN:{isbn} \n {info}',ephemeral=False)
-
 
 
 client.run(TOKEN)
